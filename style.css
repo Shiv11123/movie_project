@@ -1,0 +1,32 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+body
+{
+    background-color:#d1bc7b;
+}
+.wrapper
+{
+  
+    width:1000px;
+    margin:0px auto;
+}
+.moive_display
+{
+    background-color: red;
+    float: left;
+    margin:10px ;
+}
+.moive_display a 
+{
+    color:white;
+    text-decoration: none;
+}
+.add_movie
+{
+    float: left;
+    width:1000px;
+  
+}

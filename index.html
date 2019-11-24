@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>MovieDetails</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   
+  
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+<div class="wrapper">
+   
+           
+                <div id="movie">
+                    <div v-for="moive_info in info" class="moive_display">
+                       <img v-bind:src="moive_info.Poster" width="300px" height="400px">
+                       <p><a v-bind:href="moive_info.imdbID">{{ moive_info.Title }}</a></p>                
+                    </div>
+                </div>
+               
+
+              
+
+</div>
+        
+                  <script>
+                        var image_list = new Vue({
+                          el: '#movie',
+                         
+                          data() {
+                           return {
+                            info: null,
+                      
+                           }
+                          },
+                      
+                          mounted() {
+                           axios
+                            .get('http://www.omdbapi.com/?apikey=e0620bd4&s=harry%20potter')
+                            .then(response => {
+                             this.info = response.data.Search
+                            })
+                           
+                          }
+                         });
+                         </script>  
+ 
+    </body>
+</html>
